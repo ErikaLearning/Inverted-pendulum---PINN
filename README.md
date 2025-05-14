@@ -5,7 +5,7 @@ Physics-Informed Neural Network (PINN) model for simulating the inverted pendulu
 
 The equations and parameters used in this project are based on the file ---.
 
-## Project Structure
+## Code Structure
 
 The code is organized into the following sections:
 
@@ -26,4 +26,6 @@ The code is organized into the following sections:
   ```matlab
   [t, x] = [(t, Vm_values), (gamma, phi)]
 - `Vm_fun`: defines the input voltage signal
-- `pendulum_ODE`: defines the system's ODEs, computes angular accelerations of the cart and pendulum
+- `pendulum_ODE`: defines the system's ODEs, computes angular velocity (first derivative) and accelerations (second derivative) of the cart and pendulum
+   ```matlab
+    dxdt = [gamma_d; gamma_dd; phi_d; phi_dd];
