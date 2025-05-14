@@ -12,7 +12,6 @@ The code is organized into the following sections:
 - **Training dataset creation**
 - **Neural network (NN) architecture definition**
 - **NN training using ADAM optimizer**
-- **Training plots**
 - **Validation plots**
 - **Error analysis**
 
