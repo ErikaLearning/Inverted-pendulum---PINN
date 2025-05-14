@@ -17,14 +17,23 @@ The code is organized into the following sections:
 
 ## Implemented Functions
 
+The file `PINN_pendolo` includes the following main functions:
+
 - `model_loss`: main function for computing the total loss  
 - `pinn_loss`: PDE-based loss function  
-- `lossIC`: loss for initial condition enforcement  
-- `pendolo_soluzioneNumerica`: numerical solution of the system's differential equations.  
-  Outputs time, input voltage, cart angle, and pendulum angle:  
+- `lossIC`: loss for initial condition enforcement
+
+The function `pendolo_soluzioneNumerica` calculates the numerical solution of the system's differential equations.  
+It outputs time, input voltage, cart angle, and pendulum angle:  
+```matlab
+[t, x] = [(t, Vm_values), (gamma, phi)]
+```
+
+Within `pendolo_soluzioneNumerica`, the following helper functions are used:
+
+- `Vm_fun`: defines the input voltage signal applied to the system  
+- `pendulum_ODE`: defines the system's ordinary differential equations (ODEs).  
+  It returns the angular velocities (first derivatives) and angular accelerations (second derivatives) of the cart and the pendulum:
+
   ```matlab
-  [t, x] = [(t, Vm_values), (gamma, phi)]
-- `Vm_fun`: defines the input voltage signal
-- `pendulum_ODE`: defines the system's ODEs, computes angular velocity (first derivative) and accelerations (second derivative) of the cart and pendulum
-   ```matlab
-    dxdt = [gamma_d; gamma_dd; phi_d; phi_dd];
+  dxdt = [gamma_d; gamma_dd; phi_d; phi_dd];
