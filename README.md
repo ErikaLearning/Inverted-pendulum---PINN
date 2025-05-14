@@ -3,7 +3,7 @@
 
 Physics-Informed Neural Network (PINN) model for simulating the inverted pendulum on a circular cart.
 
-The equations and parameters used in this project are based on the file ---.
+The equations and parameters used in this project are based on the file System_identification_of_a_2DOF_pe .
 
 ## Code Structure
 
